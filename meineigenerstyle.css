@@ -1,0 +1,14 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }  
+
+  .top_aligned_image {vertical-align: text-top; /* or text-top, I can't remember for sure which works better */}  
+

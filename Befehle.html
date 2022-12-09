@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jasmin's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600&display=swap');  
+body,h1 {font-family:'Inter Tight', sans-serif;}
+h1 {letter-spacing: 3px}
+.w3-row-padding img {margin-bottom: 12px}
+
+
+table{
+border-collapse:collapse;
+border:1px solid #000000;
+}
+
+table td{
+border:1px solid #000000;
+}
+</style>
+
+</style>
+</head>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
+  <h1 class="w3-xlarge">PORTFOLIO</h1>
+  <h1>Tags, Funktionen und mehr</h1>
+  
+  
+  <div class="w3-padding-32">
+    <div class="w3-bar w3-border">
+		<a href="startseite.html" class="w3-bar-item w3-button">Startseite</a>
+		<a href="Befehle.html" class="w3-bar-item w3-button">Befehle</a>
+		<a href="webanwendungen.html" class="w3-bar-item w3-button w3-light-grey">Webanwendungen</a>
+		<a href="html.html" class="w3-bar-item w3-button w3-light-grey">HTML</a>
+		<a href="javascript.html" class="w3-bar-item w3-button w3-light-grey">JavaScript</a>
+		<a href="Schwerpunkt.html" class="w3-bar-item w3-button">Schwerpunkt</a>
+    </div>
+  </div>
+</header>
+<h2>Auf dieser Seite findet man die in den Vorlesungen behandelten HTML-Tags oder JavaScript-Funktionen. </h2>
+<!--Inhalt-->
+
+<article>
+	
+	<h3>Datentypen:</h3>
+	<table>
+	<tr>
+		<th>Name</th>
+		<th>Inhalt</th>
+		<th>Standardwert</th>
+		<th>Beispiel</th>
+	</tr>
+	<tr>
+		<td>String</td>
+		<td>Text</td>
+		<td>null</td>
+		<td>var x:String ="Das ist ein String";</td>
+	</tr>
+	<tr>
+		<td>Number</td>
+		<td>Numerisch<br>(Fließkommazahl</td>
+		<td>NaN</td>
+		<td>var x:Number =1.2;</td>
+	</tr>
+	<tr>
+		<td>int (Integer)</td>
+		<td>Numerisch<br>(Ganzzahlig)</td>
+		<td>0</td>
+		<td>var x:int = -23;</td>
+	</tr>
+	<tr>
+		<td>uint</td>
+		<td>Numerisch<br>(positiv ganzzahlig)</td>
+		<td>0</td>
+		<td>var x:uint = 13;</td>
+	</tr>
+	<tr>
+		<td>Boolean</td>
+		<td>Wahrheitswert</td>
+		<td>false</td>
+		<td>var x:Boolean = true;</td>
+	</tr>
+	<tr>
+		<td>Date</td>
+		<td>Datum</td>
+		<td>null</td>
+		<td>var x:Date = new Date();</td>
+	</tr>
+	</table>
+	
+	<h3>Operatoren:</h3>
+	<table>
+	<tr>
+		<th>Name</th>
+		<th>Formel</th>
+		<th>Abkürzung</th>
+	</tr>
+	<tr>
+		<td>Addition</td>
+		<td>var x = 3+4;</td>
+		<td>x += 3;</td>
+	</tr>
+	<tr>
+		<td>Subtraktion</td>
+		<td>var x = 5-2;</td>
+		<td>x -= 4;</td>
+	</tr>
+	<tr>
+		<td>Multiplikation</td>
+		<td>var x = 2*3;</td>
+		<td>var x *= 3;</td>
+	</tr>
+	<tr>
+		<td>Division</td>
+		<td>var x = 6/2;</td>
+		<td>var /=2;</td>
+	</tr>
+	<tr>
+		<td>Modulo</td>
+		<td>var x = 7%2;</td>
+		<td>var x %=2;</td>
+	</tr>
+	<tr>
+		<td>Wertevergleich</td>
+		<td>a == b;</td>
+		<td>/</td>
+	</tr>
+	<tr>
+		<td>Werte- und Typvergleich</td>
+		<td>a === b;</td>
+		<td>/</td>
+	</tr>
+	<tr>
+		<td>Ungleicher Wert</td>
+		<td>a!=b;</td>
+		<td>/</td>
+	</tr>
+	<tr>
+		<td>Ungleicher Wert und Typ</td>
+		<td>a !== b;</td>
+		<td>/</td>
+	</tr>
+	<tr>
+		<td>Größer bzw Größer-gleich</td>
+		<td>a>b<br>a>=b</td>
+		<td>/</td>
+	</tr>
+	</table>
+
+	<h3>console Objekt Methoden</h3>
+	<img src="image/consoleobjektstandardmethoden.PNG" height="500px">
+	
+	<h3> Variablen:</h3>
+	<pre><code>
+	//deklarieren
+	var name:Variable1; 
+
+	//Wertezuweisung
+	var name:variable1 = wert;
+    </code></pre>
+	
+	<h3> Objekte:</h3>
+	<pre><code>
+	//anlegen
+	var zahl:Zahl = new Zahl(); 
+
+	//Funktion aufrufen
+	var Groesse:Zahl = zahl.getTime();;
+    </code></pre>
+	
+	<h3> Bedingungen:</h3>
+	<pre><code>
+	//If-Bedingung
+	if (x>10)
+	{
+	   x--; }
+	else{
+		x=null;}
+
+	//switch-Bedingung
+	switch(x)
+	{
+	case 1:
+		return x = 1;
+		break;
+	case 2:
+		return x = 2;
+		break;
+	case 3:
+		return x = 3;
+		break;
+	default:
+		return x = null;
+		break;
+	}
+		
+    </code></pre>
+	
+
+
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large"> 
+  <p>you may find <a href="mailto:jasalex.mueller@gmail.com">me</a> here: <a href="https://www.linkedin.com/in/jasmin-alexandra-m%C3%BCller-aa279a225" class="fa fa-linkedin w3-hover-opacity"></a></p>
+  
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jasmin's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600&display=swap');  
+body,h1 {font-family:'Inter Tight', sans-serif;}
+h1 {letter-spacing: 3px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+</head>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
+  <h1 class="w3-xlarge">PORTFOLIO</h1>
+  <h1>How to: JavaScript</h1>
+  
+  
+  <div class="w3-padding-32">
+    <div class="w3-bar w3-border">
+      <a href="startseite.html" class="w3-bar-item w3-button">Startseite</a>
+      <a href="Befehle.html" class="w3-bar-item w3-button">Befehle</a>
+      <a href="webanwendungen.html" class="w3-bar-item w3-button w3-light-grey">Webanwendungen</a>
+      <a href="html.html" class="w3-bar-item w3-button w3-light-grey">HTML</a>
+      <a href="javascript.html" class="w3-bar-item w3-button w3-light-grey">JavaScript</a>
+      <a href="Schwerpunkt.html" class="w3-bar-item w3-button">Schwerpunkt</a>
+    </div>
+  </div>
+</header>
+
+<p>
+    <h2>Skriptsprachen</h2>
+      
+        <ul>Programmiersprachen, die über einen Interpreter ausgeführt werden</ul>
+        <ul>Scripting: Zusammensetzung von Kommandos für kleine Aufgaben</ul>
+        <ul>Anforderungen: bei kleinen Aufgaben -> ohne komplexe Algorithmen/Datenstrukturen <br> Verknüpfungen <br> fehlende Überprüfungsmöglichkeit von Tippfehlern in Variablennamen <br> einfache Handhabbarkeit</ul>
+        <ul>Konsequenzen: Einfache Sprachen (wenige Regeln/Konstrukte) <br> Dynamische Typprüfung</ul>
+        <ul>Bsp.: JavaScript <br> Erweitert HTML -> dynamisches HTML <br> Im Browser interpretiert</ul>
+      
+  </p>
+ 
+  
+  <p>
+    JavaScript kann in HTML eingebunden werden, entweder als externe Datei und mit dem Aufrufen dieser oder durch script-Tags im HTML Code. Wenn mehrere HTML Dokumente den gleichen JavaScript Code nutzen sollen, empfielt es sich, die Datei auszulagern und in den Code in eine externen .js Datei zu packen.
+    Persönlich nutze ich als Editor für JavaScript (und HTML) Virtual Studio Code, denn Tags und Befehle werden mir hier leicht aufgezeigt und empfohlen.
+   
+    
+    
+    <p>
+      Im JavaScript Code sollte der Befehl "use strict"; ganz am Anfang genutzt werden, um die Ausführung des Programms zu wählen, die neuer ist, moderne Strukturen unterstützt und fehlerhafte Stellen beseitigt.
+      <br>Durch den alert Befehl in JavaScript wird ein Pop-Up im Browser geöffnet, dass die Alert Nachricht ausgibt.
+      <br>Durch einen prompt Befehl wird der Nutzer aufgefordert, etwas einzugeben, wie z.B. seinen Namen, sein Alter etc. Diese Information kann auch gespeichert und wiedergeben werden.
+       
+    </p>
+    
+    <p>
+      <h3>Kontrollausgaben beim Entwickeln</h3>
+      Durch verschiedene Ausgaben, wie z.B. durch den console.log Befehl, wird auf der Konsole des Browsers etwas ausgegeben. 
+      Es gibt verschiedenste Methoden des console Objekts, wie man in <a href="Befehle.html">Befehle</a> sehen kann.
+    </p>
+    
+    <p><h3>Typisierung, Variablen und Operatoren</h3>
+    Die Anzahl von Typen (von Variablen, Parametern und Objekteigenschaften) ist gering, da JavaScript vollständig dynamisch typisiert ist.
+    Es ist daher nicht möglich, für eine Variable einen Typen anzugeben.
+    Es gibt bool, number (Float, Integer), String, Objekte als Datentypen in js. Auch bereits definierte Variablen können jeden Datentyp speichern. Aus number a kann später String a werden.
+    Variablen können durch let, var und const definiert werden. Let für Zugriff nur im Bereich {}, var für lokalen/globalen Zugriff und const für Konstanten.
+    JavaScript unterscheidet außerdem nicht zwischen Ganzzahlen und Fließkommazahlen.
+    Durch ein + zwischen Strings verkettet werden, durch ${} wird der Klammerinhalt berechnet. Berechnungen funktionieren analog zu denen in Java wie z.B. var a = 1*2; .
+    
+    </p>
+    
+    <p><h3>Verzweigungen und Schleifen</h3>
+    Beide funktionieren genauso wie in java. Es gibt if/else und switch Verzweigungen und Schleifen wie for.
+    Hier mal ein Beispiel für eine for Schleife: <br><img src="image/forschleifebeispiel.PNG"><br>
+    <form action="Übungen/Vorlesung3/SternchendreieckButton.html">
+      <input type="submit" value="Sternchendreieckübung" />
+    </form><br>
+    </p>
+    <p><h3>Funktionen</h3>
+        JavaScript Funktionen sind gleichzustellen mit Methoden in Java. Man definiert sie, um den gleichen Code mehrmals zu verwenden indem man ihn aufruft.
+        Funktionen können zum Beispiel so aussehen:
+        <code>
+          function meineFunktion(){
+            alert("Juhu! Meiner erste Funktion!");
+          }
+        </code>
+       <br> <img src="image/funktionbeispielcountchar.PNG"><br>
+            
+        Die Funktion kann dann in HTML aufgerufen werden und auch in einen Button gepackt werden und wird dann immer aufgerufen, wenn der Button geklickt wird.
+        Es müssen hier nicht umbedingt alle Parameter definiert werden.
+        
+        <br>
+        <br> Es gibt auch vordefinierte Funktionen:
+          
+            <ul>parseInt() konvertiert einen String (z.B. 12) in ein Int. </ul>
+            <ul>parseFloat() ist wie parseInt nur für Kommazahlen (müssen aber mit . getrennt werden)</ul>
+            <ul>eval() interpretiert einen String</ul>
+        <br> Außerdem gibt es Pfeilfunktionen, wie zum Beispiel: 
+        <br><img src="image/pfeilfunktioncountchar.PNG"> 
+        <br>
+        <form action="Übungen/Vorlesung4/Buchstabenzähler.html">
+          <input type="submit" value="Zeichenzählerübung" />
+        </form><br>  
+        <br>
+        <br>
+        <form action="Übungen/Vorlesung5/Währungsumrechner.html">
+          <input type="submit" value="Währungsumrechner" />
+        </form><br> 
+
+        <br>
+        <form action="Übungen/Vorlesung6/Objektkonstruktoren.html">
+          <input type="submit" value="Objektkonstruktoren" />
+        </form><br> 
+
+        </p>
+
+      
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-large"> 
+  <p>you may find <a href="mailto:jasalex.mueller@gmail.com">me</a> here: <a href="https://www.linkedin.com/in/jasmin-alexandra-m%C3%BCller-aa279a225" class="fa fa-linkedin w3-hover-opacity"></a></p>
+</footer>
+
+</body>
+</html>
