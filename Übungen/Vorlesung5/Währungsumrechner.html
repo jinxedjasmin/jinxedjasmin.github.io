@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Währungsumrechner</title>	
+
+	</head>
+
+	<body>
+		<script src="Währungsumrechner.js">
+		</script>	
+
+        
+    <form id="meinFormular" name="meinFormular">
+
+        <p>
+            <input type="number" id="eingabe" size="30" value="">
+           <!-- <input type="submit" value="Abschicken!"> -->
+           <br><input type="button" value="Umrechnen!" onclick="umrechner()">
+            <br><br><input type="reset" value="Zurücksetzen">
+            <input type="text" id="ausgabe" name="ausgabe" size="30" value="">
+        </p>
+            
+
+        <p>
+            <input type="radio" checked="checked" id="wahleurusd" name="radiowaehrung">€EUR zu $USD
+            <input type="radio" id="wahlusdeur" name="radiowaehrung">$USD zu €EUR
+            
+        </p> 
+
+        <script>
+            
+            function umrechner() {
+                var eingabe = document.getElementById("eingabe");
+                var wert = eingabe.value;
+                
+
+                if (document.getElementById("wahleurusd").checked){
+                    var ausgabewert = wert*1.02;
+                    var commatest = ausgabewert.toString();
+                    commatest = commatest.replaceAll("." , ",");
+                    document.meinFormular.ausgabe.value=commatest;
+                }
+                else {
+                    var ausgabewert = wert*0.98;
+                    var commatest = ausgabewert.toString();
+                    commatest = commatest.replaceAll("." , ",");
+                    document.meinFormular.ausgabe.value=commatest;
+            }
+
+              /*
+              if select id==wahleurusd {
+                var neuerwert = eingabe*1.02;
+                return neuerwert;
+              }
+              else {
+                var neuerwertzwei = eingabe*0,98;
+                return neuerwertzwei;
+              }
+                */
+               //document.write(ausgabe);
+            }
+        </script>
+    
+    </form>
+
+		<br><br><form action="../../javascript.html">
+			<input type="submit" value="Take me home, country roads" />
+		  </form><br>
+	</body>
+</html>

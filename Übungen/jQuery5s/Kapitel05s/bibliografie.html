@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Bibliografie-Beispiel</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+var biblioText='';
+$('a[href^=http://]').each(function() {
+  var siteText = $(this).text();
+  var extLink = $(this).attr('href');
+  biblioText += '<li><strong>' + siteText + ":</strong> " + extLink + '</li>\n';
+});
+
+if (biblioText) {
+  bibHTML = '<div id="bib"><p>In diesem Artikel genannte Webseiten:</p></div>';
+  $(bibHTML).append(biblioText).appendTo($('#main'));
+}
+
+});
+</script>
+</head>
+<body id="twoCol">
+<div id="container">
+  <div id="banner"><img src="../bilder/banner.png" alt="JavaScript - Missing Manual" width="760" height="65"></div>
+  
+  <div id="contentWrap">
+  <div id="main">
+  <h1>Eine dynamisch erstellte Bibliografie</h1>
+  <p>Im Laufe der Geschichte gab es eine Menge fantastischer Websites. <a href="http://www.yahoo.de/">Yahoo!</a> kommt einem da in den Sinn, genauso wie <a href="http://www.google.de/">Google</a>. Und nur wenige werden den kulturprägenden Einfluss von <a href="http://www.hampsterdance.com/">Hampster Dance</a> vergessen.</p>
+  
+</div>
+  
+  <div id="sidebar">
+    <h2>Bibliografie-Beispiel</h2>
+</div>
+</div>
+ 
+<div id="footer"><em>&#8222;Interaktive Websites mit JavaScript&#8220;</em></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="MyWebsiteVorlesung.CSS">
+
+  <script type="text/javascript">
+
+ 
+
+  //Feld zum Speichern der User
+
+  var userliste = new Array();
+
+  var userAnzahl = 0;
+
+ 
+
+  //Listet alle User auf
+
+  function userlisteAusgeben(){
+
+    var output = "";
+
+    for (var i=0; i< userliste.length; i++){
+
+      output += userliste[i].ausgabe() + "\n";
+
+    }
+
+    alert(output);
+
+  }
+
+ 
+
+  //Weist dem User die Attribute zu
+
+  function erzeugeUser(){
+
+    //private Eigenschaften/ Attribute der User
+
+    var nummer = userAnzahl;
+
+    var vorname = document.user.vorname.value;
+
+    var nachname = document.user.nachname.value;
+
+    var alter = document.user.alter.value;
+
+     /*if(document.user.geschlecht[0].checked) {
+
+      geschlecht = true;
+
+    }
+
+    else {
+
+      geschlecht = false;
+
+    } */
+
+    var username = document.user.username.value;
+
+    var passwort = document.user.pwd.value;
+
+ 
+
+    //öffentliche Methoden für den User
+
+    this.getAlter = function(){
+
+      return alter;
+
+    }
+
+ 
+
+    this.getVorname = function(){
+
+      return vorname;
+
+    }
+
+ 
+
+    this.setNachname = function(nName){
+
+      nachname = nName;
+
+    }
+
+ 
+
+    /*this.getGeschlecht = function(){
+
+      if(geschlecht == true){
+
+        return "weiblich";
+
+      }
+
+      else{
+
+        return "männlich";
+
+      }
+
+    } */
+
+ 
+
+    this.checkUser = function(pw: String): Boolean{
+
+      if(passwort: String == pw){
+
+        return true;
+
+      }else{
+
+        return false;
+
+      }
+
+    }
+
+ 
+
+    //erzeugt den String für die Userliste
+
+    this.ausgabe = function(){
+
+      return nummer + ". " + vorname + ", " + nachname + ", " + alter + " Jahre, "
+
+    + this.getGeschlecht() + ", " + username + ", " + passwort;
+
+    }
+
+ 
+
+  }
+
+ 
+
+  //Konstruktor für die User
+
+  function ErstelleUser(){
+
+    userliste[userAnzahl++] = new erzeugeUser();
+
+  }
+
+ 
+
+  //Methode, um Zugriff auf private Attribute und öffentliche Methoden zu testen
+
+  function zugriffTesten(){
+
+    alert("Zugriff auf privates Attribut alter: " + userliste[0].alter); //Ausgabe: undefined
+
+    //alert("Zugriff auf öffentliche getAlter Methode: " + userliste[0].getAlter()); //Ausgabe Alter
+
+  }
+
+ 
+
+  //Methode, um Alter eines Users auszugeben
+
+  function onAlertAlter(){
+
+    var input = prompt("Kontaktnummer eingeben:", "");
+
+    alert(userliste[input-1].getAlter());
+
+  }
+
+ 
+
+  //Methode, um Nachname eines Users zu ändern
+
+  function onAlertNachname(){
+
+    var input = prompt("Kontaktnummer eingeben:", "");
+
+    var nName = prompt("Neuen Nachnamen festlegen", "");
+
+    userliste[input-1].setNachname(nName);
+
+  }
+
+ 
+
+  //Methode, um das Passwort eines Users zu vergleichen/kontrollieren
+
+  function onAlertCheckUser(){
+
+    var input = prompt("Kontaktnummer eingeben:", "");
+
+    var passwort = prompt("Hallihallo, " + userliste[input-1].getVorname()
+
+  + " Bitte gib dein Passwort ein", "");
+
+    if (userliste[input-1].checkUser(passwort)) {
+
+      alert("YAY! Das war das richtige Passwort!");
+
+    } else {
+
+      alert("Leider nein leider garnicht :( Dein Passwort war falsch");
+
+    }
+
+  }
+
+ 
+
+  //Methode, um das Geschlecht eines bestimmten Users auszugeben
+
+  function onAlertGetGeschlecht(){
+
+    var input = prompt("Usernummer eingeben:", "");
+
+    alert(userliste[input-1].getGeschlecht());
+
+  }
+
+ 
+
+  //Methode, um die User Anzahl ausgeben zu lassen
+
+  function onAlertUserAnzahl() {
+
+    alert("Momentan gibt es " + userAnzahl + " User.");
+
+  }
+
+
+  </script>
+
+</head>
+
+<body>
+
+  <h1>User Eingabe</h1>
+
+  <form id="user" name="user">
+
+  <p>
+
+    <!-- Usereingaben -->
+
+  <table>
+
+    <tr>
+
+    <td><b>Vorname:</td>
+
+    <td><input type="text" id="vorname" size="30" value=""></td>
+
+    </tr>
+
+    <tr>
+
+    <td><b>Nachname:</td>
+
+    <td><input type="text" id="nachname" size="30" value=""></td>
+
+  </tr>
+
+    <tr>
+
+    <td><b>Alter:</td>
+
+    <td><input type="text" id="alter" size="30" value=""></td>
+
+  </tr>
+
+  <tr>
+
+    <td><b>Geschlecht:</td>
+
+    <td><input type="radio" id="geschlecht" name="geschlecht" value="opt1"
+
+    checked="checked">weiblich
+
+    <input type="radio" id="geschlecht" name="geschlecht" value="opt1">männlich </td>
+
+  </tr>
+
+  <tr>
+
+    <td><b>Username:</td>
+
+    <td><input type="text" id="username" size="30" value=""></td>
+
+  </tr>
+
+  <tr>
+
+    <td><b>Passwort:</td>
+
+    <td><input type="password" id="pwd" size="30" value=""></td>
+
+  </tr>
+
+  </table>
+
+ 
+
+    <!--User erstellen-->
+
+    <input type="button" value="Eingeben" onclick="ErstelleUser()">
+
+ 
+
+    <!--Userliste ausgeben-->
+
+    <p><input type="button" value="Userliste ausgeben" onclick="userlisteAusgeben()"></p>
+
+ 
+
+    <!--Anzahl User-->
+
+    <p><input type="button" value="Useranzahl ausgeben" onclick="onAlertUserAnzahl()"></p>
+
+ 
+
+    <!--Methoden testen-->
+
+    <p>Userspezifische Abfragen: </p>
+
+    <p><input type="button" value="Alter anzeigen" onclick="onAlertAlter()">
+
+    <input type="button" value="Nachname ändern" onclick="onAlertNachname()">
+
+    <input type="button" value="Geschlecht ausgeben" onclick="onAlertGetGeschlecht()">
+
+    <input type="button" value="User kontrollieren" onclick="onAlertCheckUser()"></p>
+
+ 
+
+    <!--Zugriff testen-->
+
+    <p>Zugriffsrechte: </p>
+
+    <input type="button" value="Zugriff" onclick="zugriffTesten()">
+
+ 
+
+  </p>
+
+  </form>
+
+</body>
+
+</html>

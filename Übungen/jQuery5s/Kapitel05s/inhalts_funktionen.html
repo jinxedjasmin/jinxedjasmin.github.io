@@ -1,0 +1,135 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery-Inhaltsfunktionen testen</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function( ) {
+	$('.example').each(function() {
+		$this = $(this); // reference to the p tag
+		//alert($this.find('a').html());
+		$this.find('a').click(function() {
+			var oldHTML=$('#messageBox #changeContainer').html();
+			oldHTML = oldHTML.replace(/></g,'> <');
+			$('#before').text(oldHTML);
+			text = $('#inhalt').val();
+			//text = text.replace(/\s/g,'');
+			var codeElem = $(this).prev('code');
+			var code = codeElem.text();
+			code = code.replace(/\(\)/,"('" + text + "')");
+			$('#jquery').text(code);
+			eval(code);
+			var newHTML=$('#messageBox #changeContainer').html();
+			newHTML = newHTML.replace(/></g,'> <');
+			$('#after').text(newHTML);
+		});
+	});
+});
+
+
+		
+		
+	</script>
+<style type="text/css">
+<!--
+#messageBox {
+	float: right;
+	width: 400px;
+	padding: 10px;
+	background: #E6E2AE;
+	border: 1px solid #0A3737;
+	margin-top: 15px;
+}
+
+#messageBox code {
+	font-size: 15px;
+}
+
+#meldung {
+	font-size: 16px;
+	border: 1px solid red;
+	padding: 5px;
+}
+
+#meldung p {
+	font-size: 16px;
+}
+
+.codeRun {
+	font-weight: bold !important;
+	color: red;
+}
+
+#oneCol #contentWrap {
+	float: none;
+}
+#oneCol #main {
+	float: none;
+	margin-left: 20px;
+}
+-->
+</style>
+</head>
+
+<body id="oneCol">
+<div id="container">
+  <div id="banner"><img src="../bilder/banner.png" alt="JavaScript - Missing Manual" width="760" height="65"><span id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+  
+  <div id="contentWrap">
+  <div id="main">
+   
+  <h1>jQuery-Inhaltsfunktionen testen</h1>
+ <h2>jQuery-Befehl</h2>
+  <p id="jquery" class="codeRun">Der jQuery-Befehl wird hier angezeigt.</p>
+  <div id="messageBox">
+   <div id="changeContainer">
+  <div id="meldung"><p>Hierhin kommt der neue Inhalt</p></div>
+  </div>
+    <h2>HTML vorher:</h2>
+  <code id="before">&lt;div id=&quot;meldung&quot;&gt;&lt;p&gt;Hierhin kommt der neue Inhalt&lt;/p&gt;&lt;/div&gt;</code>
+  <h2>HTML nachher:</h2>
+  <code id="after"></code>
+	</div>
+  <form name="form1" method="post" action="">
+    <h2>Inhalt ersetzen durch</h2>
+    <p>
+      <textarea name="inhalt" cols="30" rows="4" id="inhalt"></textarea>   
+    </p>
+  </form>
+  
+  <h2>.text()</h2>
+  <p class="example"><code>$('#meldung').text(<span class="text"></span>);</code>
+    <a href="#">Los</a></p>
+    <h2>.html()</h2>
+  <p class="example"><code>$('#meldung').html(<span class="text"></span>);</code>
+   <a href="#">Los</a></p>
+   <h2>.append()</h2>
+  <p class="example"><code>$('#meldung').append(<span class="text"></span>);</code>
+   <a href="#">Los</a></p>
+   <h2>.prepend()</h2>
+  <p class="example"><code>$('#meldung').prepend(<span class="text"></span>);</code>
+   <a href="#">Los</a></p>
+    <h2>.after()</h2>
+  <p class="example"><code>$('#meldung').after(<span class="text"></span>);</code>
+   <a href="#">Los</a></p>
+    <h2>.before()</h2>
+  <p class="example"><code>$('#meldung').before(<span class="text"></span>);</code>
+   <a href="#">Los</a></p>
+       <h2>.replaceWith()</h2>
+    <p class="example"><code>$('#meldung').replaceWith(<span class="text"></span>);</code>
+   <a href="#">Los</a></p>
+       <h2>.remove()</h2>
+    <p class="example"><code>$('#meldung').remove(<span class="text"></span>);</code>
+   <a href="#">Los</a></p>
+       <h2>.empty()</h2>
+    <p class="example"><code>$('#meldung').empty(<span class="text"></span>);</code>
+   <a href="#">Los</a></p>
+  </div>
+  </div>
+  
+<div id="footer"><em>&#8222;Interaktive Websites mit JavaScript&#8220;</em></div>
+</div>
+</body>
+</html>

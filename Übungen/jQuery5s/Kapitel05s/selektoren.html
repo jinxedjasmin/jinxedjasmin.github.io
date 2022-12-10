@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>jQuery-Selektoren testen</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery.color.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#submit').attr("disabled","disabled");
+													 
+	var highlight = {
+		current: false
+	};
+	
+	$('#selectorList li').each(function(){
+		$(this).html('<a href="#">'+$(this).text()+'</a>');
+	});
+	
+	$('#selectorList li a').addClass('clickable').click(function(event) {
+		$('#selector').val($(this).text());
+		$('#apply').click();
+		event.stopPropagation();
+		return false;
+		
+	});
+	
+	$('#apply').click(apply);
+	$('form').submit(apply);
+										
+   function apply() {
+		var selector = $('#selector').val();
+					clearPage();
+		if (selector == '') {
+			return false;
+		} else {
+			$('#jquerySelector').text(selector);
+			highlight.current = $(selector);
+			highlight.current.each(function() {
+				
+				var vpadding = parseInt($(this).css('padding-top'));
+				vpadding += parseInt($(this).css('padding-bottom'));
+				var w=$(this).width();
+				var hpadding = parseInt($(this).css('padding-left'));
+				hpadding += parseInt($(this).css('padding-right'));
+				var w=$(this).width() + hpadding;
+			 
+				var h=$(this).height()+vpadding;
+				var t=$(this).offset().top;
+				var l=$(this).offset().left;
+				var overlay = $('<span class="highlighted"></span>');
+				overlay.width(w).height(h);
+				overlay.css({top:t,left:l});
+				overlay.appendTo('body');
+				overlay.animate({ backgroundColor: "red" }, 1000)
+			});
+		}
+		$('#numElems').text(highlight.current.length);
+		return false;
+	}
+	
+	$('#resetPage').click(function() {
+		resetPage();
+	});
+	
+	$('#showLabels').click(function() {
+		if ($('.badge').length>0) {
+			$('.badge').remove();
+		} else {
+			$('[id]').each(function() {
+				var w=$(this).width()
+				var t=$(this).offset().top;
+				var l=$(this).offset().left;
+				if ($(this).attr('id')) {
+				var badge=$('<span class="badge">#' + $(this).attr('id') + '</span>');
+				badge.css({top:t,left:l});
+				badge.click(function(){$('.badge').remove()});
+				$('body').append(badge);
+				}
+			});
+		}
+		return false;
+	});
+	
+	$(document).click(function(event) {
+		$('.highlighted').remove();
+		$('#selector')[0].focus();
+	});
+
+	
+	function clearPage() {
+		$('#jquerySelector').html('&nbsp;&nbsp;');
+		$('.highlighted').remove();
+		$('#numElems').html('&nbsp;');
+	}	
+	
+	function resetPage() {
+		$('#selector').val('');
+    clearPage();
+
+	}
+	
+});
+</script>
+<style type="text/css">
+<!--
+#main h2 {
+	border-bottom: 1px solid #053030;
+}
+-->
+</style>
+</head>
+<body id="threeCol">
+<div id="container">
+  <div id="banner"><img src="../bilder/banner.png" alt="JavaScript - Missing Manual" width="760" height="65"><span id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+  
+  <div id="contentWrap">
+  <div id="main">
+    <h1>jQuery-Selektoren testen</h1>
+  <p>Geben Sie in das Feld unten einen jQuery-Selektor ein und schauen Sie, welche Elemente jQuery auswählt:</p>
+  <form name="form1" method="post" action="">
+   <p> <label>Selektor:
+      <input type="text" name="selector" id="selector">
+    </label>
+     <input type="submit" name="apply" id="apply" value="Anwenden">
+     <input type="reset" name="resetPage" id="resetPage" value="Löschen">
+   </p>
+    <p>jQuery-Code: <strong>$('<span id="jquerySelector">&nbsp;&nbsp;</span>')</strong></p>
+    <p>Gefundene Elemente: <span id="numElems"></span></p>
+  
+  <h2>Help</h2>
+  <p>
+    <label>
+      <input type="submit" name="showLabels" id="showLabels" value="Anzeigen">
+      IDs</label>
+  </p>
+
+  <h2>Beispiel-Selektoren (klicken Sie darauf!)</h2>
+  <ul id="selectorList" class="sideBySide">
+    <li>body</li>
+    <li>p</li>
+    <li>.clickable</li>
+    <li>#main</li>
+    <li>#main h2</li>
+    <li>div>h2</li>
+    <li>h1+p</li>
+    <li>input[type=text]</li>
+    <li>p:first</li>
+    <li>p:last</li>
+    <li>p:even</li>
+    <li>p:odd</li>
+    <li>li:contains(#main)</li>
+    <li>p:has(em)</li>
+    <li>a[href=#]</li>
+    <li>a[href*=sawmac.com]</li>
+    <li>:checked</li>
+    <li>:disabled</li>
+  </ul>
+      </form>
+  </div>
+  
+  <div id="sidebar"><h2>jQuery-Selektoren testen</h2>
+</div>
+  </div>
+ 
+  <div id="news">
+    <h2>Noch mehr HTML zum Auswählen</h2>
+    <h3>Überschrift 3</h3>
+    <p>Quis nostrud exercitation ut labore et <strong>dolore magna aliqua.</strong> Sed do eiusmod tempor incididunt cupidatat non </p>
+    <h3>Überschrift 3</h3>
+    <p>Quis <em>nostrud exercitation ut labore et dolore magna</em> aliqua. Sed do eiusmod tempor incididunt cupidatat non </p>
+    <h2>Formular-Felder</h2>
+    <form action="" method="post" name="form2" id="test">
+      <p>
+        <label>
+          <input name="checkbox1" type="checkbox" id="checkbox1" value="check1">
+          Kontrollkästchen</label>
+      </p>
+      <p>
+        <label>
+          <input name="checkbox2" type="checkbox" id="checkbox2" value="check2" checked>
+          Kontrollkästchen2</label>
+      </p>
+      <p>
+        <label>
+          <input name="radio" type="radio" id="radio1" value="yes" checked>
+          Radio1</label>
+          <label>
+          <input type="radio" name="radio" id="radio2" value="no">
+          Radio2</label>
+      </p>
+      <p>
+        <input type="submit" name="submit" id="submit" value="Senden">
+      </p>
+
+    </form>
+    <ul>
+      <li>Listenelement mit Bullet 1</li>
+      <li>Listenelement mit Bullet 2</li>
+    </ul>
+<p>&nbsp;    </p>
+  </div>
+  
+<div id="footer"><em>&#8222;Interaktive Websites mit JavaScript&#8220;</em></div>
+</div>
+</body>
+</html>

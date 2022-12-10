@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sternchendreieck</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function sternchendreieck(){
+            var sternchenzahl = prompt("Wieviele Sternchenzeilen möchtest du haben?");
+
+            let sternchen = "*";
+            for (let i=0; i<sternchenzahl; i++)
+            {
+                ausgabe.innerHTML += sternchen + "<br>";
+                sternchen += "*";
+                
+            }
+        alert( "Deine Sternchenzeilen-Anzahl ist: "+ sternchenzahl);  
+        }
+    </script>
+    <div id="ausgabe"></div>
+    <button onclick="sternchendreieck()">Sternchendreieck!</button>
+    <br><br><form action="../../javascript.html">
+        <input type="submit" value="Take me home, country roads" />
+      </form><br>
+</body>
+</html>

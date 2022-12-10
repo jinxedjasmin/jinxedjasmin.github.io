@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Skript 5.1</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+var punkte = 0; // Punkte sind am Anfang 0
+var fragen = [
+								 ['Wie viele Monde hat die Erde?', 1],
+								 ['Wie viele Monde hat Saturn?',31],
+								 ['Wie viele Monde hat die Venus?', 0]
+								];
+
+
+//Durch die Liste der Fragen gehen und jede einzelne stellen
+for (var i=0; i<fragen.length; i++) {
+	stelleFrage(fragen[i]);
+}
+
+//Funktion zum Stellen einer Frage
+function stelleFrage(frage) {
+  var antwort = prompt(frage[0],'');
+	if (antwort == frage[1]) {
+		alert('Richtig!');
+		punkte++;
+	} else {
+		alert('Tut mir leid, aber die richtige Antwort lautet ' + frage[1]);
+	}
+}  
+
+
+
+</script>
+</head>
+<body id="twoCol">
+<div id="container">
+  <div id="banner"><img src="../bilder/banner.png" alt="JavaScript - Missing Manual" width="760" height="65"><span id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+  
+  <div id="contentWrap">
+  <div id="main">
+  <h1>Ein einfaches Quiz - Fortsetzung</h1>
+  <p>
+  <script type="text/javascript">
+	var meldung = 'Sie haben ' + punkte;
+	meldung += ' von ' + fragen.length;
+	meldung += ' Fragen richtig.';
+	document.write(meldung);
+	</script>
+  </p>
+</div>
+  
+  <div id="sidebar">
+    <h2>Skript 5.1</h2>
+</div>
+</div>
+ 
+<div id="footer"><em>&#8222;Interaktive Websites mit JavaScript&#8220;</em></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Skript 5.2</title>
+<link href="../css/global.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+#main h2 {
+	font: bold 30px Tahoma, Geneva, sans-serif;
+	color: #036;
+	border-bottom: 1px solid #666;
+	margin-top:15px;
+  text-transform:uppercase;
+	position:relative
+}
+/* the class to overlay the ۢerschrifts */
+.streifenEffekt {
+position: absolute;
+width: 100%;
+display: block;
+height:36px;
+background: url(gradient.png) repeat;
+}
+/* for IE 6 only */
+* html .streifenEffekt {
+  background: none;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='gradient.png', sizingMethod='scale');
+}
+-->
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script>
+	$(document).ready(function(){
+	$('#main h2').prepend('<span class="streifenEffekt"></span>')});
+
+</script>
+
+
+</head>
+<body id="twoCol">
+<div id="container">
+  <div id="banner"><img src="../bilder/banner.png" alt="JavaScript - Missing Manual" width="760" height="65"><span id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+  
+  <div id="contentWrap">
+  <div id="main">
+  <h1>jQuery-verbesserte Überschriften</h1>
+  <h2>Eine mysteriöse Überschrift</h2>
+  <p>Mauris imperdiet nisi ut pede. Vivamus nisi lorem, euismod in, fringilla et, porttitor in, nunc. Vivamus metus. </p>
+  <h2>Noch eine coole Überschrift</h2>
+  <p>Mauris imperdiet nisi ut pede. Vivamus nisi lorem, euismod in, fringilla et, porttitor in, nunc. Vivamus metus. </p>
+  <h2>Der Spaß hört nicht mehr auf</h2>
+  <p>Mauris imperdiet nisi ut pede. Vivamus nisi lorem, euismod in, fringilla et, porttitor in, nunc. Vivamus metus. </p>
+  <p>&nbsp;</p>
+</div>
+  
+  <div id="sidebar">
+    <h2>Skript 5.2</h2>
+</div>
+</div>
+ 
+<div id="footer"><em>&#8222;Interaktive Websites mit JavaScript&#8220;</em></div>
+</div>
+</body>
+</html>

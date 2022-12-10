@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Skript 6.1</title>
+<style type="text/css">
+/*Stile für Tabelle auf dieser Seite*/
+table {
+	border-right: 1px solid #A7A37E;
+	border-bottom: 1px solid #A7A37E;
+}
+td, th {
+	font-size: 1.3em;
+	padding: 3px;
+}
+th {
+	font-weight: bold !important;
+	border-bottom: 1px solid #333333;
+	background: url(../Kapitel01/bilder/th_bg.png) repeat-x;
+	border-top: 1px solid #333333;
+	padding-top: 4px;
+	border-left: 1px solid #A7A37E;
+}
+td {
+	border-left: 1px solid #A7A37E;
+}
+.gerade{
+	background-color: #E7F7FF;
+}
+
+.hervorheben {
+	background-color: #FC6 !important;
+}
+</style>
+<link href="../css/global.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function( ) {
+  $('table.gestreift tr:even').addClass('gerade');
+  $('table.gestreift tbody tr').mouseover(
+    function(){
+      $(this).addClass('hervorheben');
+    });
+  $('table.gestreift tbody tr').mouseout(
+    function(){
+      $(this).removeClass('hervorheben');  
+    });
+});
+
+</script>
+</head>
+<body id="twoCol">
+<div id="container">
+  <div id="banner"><img src="../bilder/banner.png" alt="Quis Nostrud" width="760" height="65"><span id="badge"><a href="http://www.sawmac.com/missing/js/"></a></span></div>
+  <div id="contentWrap">
+    <div id="main">
+      <h1>Gestreifte Tabellen</h1>
+      <table width="98%" border="0" cellspacing="0" cellpadding="0" class="gestreift">
+        <thead>
+          <tr>
+            <th scope="col">Produkt</th>
+            <th scope="col">Preis</th>
+            <th scope="col">Lagerstatus</th>
+            <th scope="col">Gewicht (in Pfund)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ultra-Leucht Haarspray</td>
+            <td>20,00 €</td>
+            <td>auf Lager</td>
+            <td>0,5</td>
+          </tr>
+          <tr>
+            <td>Anodyne 3000</td>
+            <td>495,00 €</td>
+            <td>auf Anfrage</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <td>Big Foot Fön</td>
+            <td>55,00 €</td>
+            <td>auf Lager</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>Katze aus dem Hut</td>
+            <td>15,00 €</td>
+            <td>auf Anfrage</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Kitzel mich, Elmo</td>
+            <td>67,00 €</td>
+            <td>auf Lager</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Herrenuhr</td>
+            <td>350,00 €</td>
+            <td>auf Lager</td>
+            <td>0,5</td>
+          </tr>
+          <tr>
+            <td>Lederkoffer</td>
+            <td>150,00 €</td>
+            <td>auf Lager</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Lorem Ipsum</td>
+            <td>5,00 €</td>
+            <td>auf Lager</td>
+            <td>0,5</td>
+          </tr>
+          <tr>
+            <td>Dolor Sat</td>
+            <td>7,50 €</td>
+            <td>auf Anfrage</td>
+            <td>0,5</td>
+          </tr>
+          <tr>
+            <td>Chicken Gumbo</td>
+            <td>15,00 €</td>
+            <td>auf Lager</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Noch ein Produkt</td>
+            <td>3,00 €</td>
+            <td>auf Lager</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Hut für Katze</td>
+            <td>5,00 €</td>
+            <td>auf Anfrage</td>
+            <td>0,75</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="sidebar">
+      <h2>Skript 6.1</h2>
+    </div>
+  </div>
+  <div id="footer"><em>&#8222;Interaktive Websites mit JavaScript&#8220;</em></div>
+</div>
+</body>
+</html>
