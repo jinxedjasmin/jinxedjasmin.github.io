@@ -139,8 +139,29 @@ h1 {letter-spacing: 3px}
     <br>
 
     <h3>Anonyme Funktionen</h3>
+    Die .each()-Funktion erlaubt das Bearbeiten alles Elemente einer bestimmten Auswahl. Dazu wird an sie eine Referenz auf eine Funktion oder eine anonyme Funktion als Argument übergeben. Anschließend wird diese Funktion auf jedem Element der Auswahl ausgeführt. Um während des automatischen Schleifendurchlaufs auf die jeweiligen Elemente der Auswahl zuzugreifen benutzt man $(this).
+
+
     <h3>Events in jQuery</h3>
+    Events in jQuery sind bestimmte Aktionen, die von Benutzern ausgelöst werden können, wie zum Beispiel das Klicken auf einen Button oder das Rollen mit der Maus über ein Element.
+    <br>Mit jQuery können wir spezielle Funktionen ("Handler") definieren, die ausgeführt werden, wenn ein bestimmtes Event stattfindet.
+    <br> Beispiel:
+    <br><br>
+    $('#button').click(function() {
+    // Hier kommt der Code, der ausgeführt werden soll, wenn der Button geklickt wird
+    });
+    <br><br>
+    In diesem Beispiel haben wir ein Element mit der ID "button" ausgewählt und eine Funktion ("click") definiert, die ausgeführt wird, wenn der Button geklickt wird. Es gibt viele verschiedene Events in jQuery, die wir verwenden können, wie zum Beispiel "hover", "focus" oder "submit".
+
+
     <h3>Event-Listener</h3>
+    Ein Event Listener ist eine Funktion, die ausgeführt wird, wenn ein bestimmtes Event stattfindet. Event Listener werden normalerweise verwendet, um auf Userinteraktionen mit einer Webseite zu reagieren, indem sie bestimmten Code ausführen.
+    <br><br>
+    document.getElementById('button').addEventListener('click', function() {
+    // Hier kommt der Code, der ausgeführt werden soll, wenn der Button geklickt wird
+    });
+    <br><br>
+
     <h3>Event-Handler</h3>
     Ein Event-Handler ist eine Funktion in JavaScript, die ausgeführt wird, wenn ein bestimmtes Ereignis eintritt. Ein Ereignis kann zum Beispiel sein, dass ein Benutzer auf einen Button klickt, dass ein Formular abgesendet wird oder dass ein Bild geladen wurde.
     Event-Handler werden häufig verwendet, um die Interaktion mit dem Benutzer zu ermöglichen und die Benutzeroberfläche einer Web-Anwendung zu verändern. Sie werden in der Regel mit dem addEventListener() Methode hinzugefügt, die einem Element im DOM (Document Object Model) zugewiesen wird.
@@ -153,7 +174,15 @@ h1 {letter-spacing: 3px}
     Handler ermöglichen es, dass die Web-Anwendung auf Ereignisse reagieren und entsprechende Aktionen ausführen kann.<br>
 
 
-    <h3>Event-Modell</h3>
+    <h3>Außerdem: Methoden von jQuery</h3>
+    <br>ready-Funktion: stellt sicher, dass der Code erst ausgeführt wird, wenn das HTML in den Browser geladen wurde
+    <br>hover-Event: stellt eine Kombination aus den Events mouseover und mouseout dar, erwartet daher auch zwei Funktionen als Argumente; eine wenn die Maus über das Event fährt und eine wenn sie sich entfernt
+    <br>toggle-Event: kombiniert Klicks, erwartet auch zwei Funktionen; die Erste wird beim ersten Klick übergeben und die Zweite beim Zweiten
+    <br>bind-Methode: ermöglicht Weitergabe weiterer daten an die Event-Handler-Funktion; verschiedene Events können verschiedene Informationen an die selbe Event-Handlich-Funktion übergeben
+    <br>preventDefault-Methode: erlaubt das Unterbrechen des Verhaltens eines Links o.ä.
+    <br>Event-Objekt: speichert Informationen über das Event, welches gerade stattgefunden hat, z.B. Position der Maus; Kann nur von dem gerade ausgelösten Objekt genutzt werden
+
+
     <h3>Window-Modell</h3>
     <h3>Accordion</h3>
         <form action="Ubungen/Vorlesung%207%20und%208%20jQuery5s/K10/10.1.html">
