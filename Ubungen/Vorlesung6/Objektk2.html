@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Objektkonstruktorenübung</title>
+</head>
+<body>
+
+<form id="kontaktFormular">
+  <!-- First name -->
+  <label for="vorname">Vorname:</label><br>
+  <input type="text" id="vorname" name="vorname"><br>
+
+  <!-- Last name -->
+  <label for="nachname">Nachname:</label><br>
+  <input type="text" id="nachname" name="nachname"><br>
+
+  <!-- Username -->
+  <label for="benutzername">Benutzername:</label><br>
+  <input type="text" id="benutzername" name="benutzername"><br>
+
+  <!-- Password -->
+  <label for="passwort">Passwort:</label><br>
+  <input type="password" id="passwort" name="passwort"><br>
+
+  <!-- Submit button -->
+  <input type="submit" value="Absenden">
+</form>
+
+<!-- Container for displaying submitted contacts -->
+<div id="kontaktAnzeige"></div>
+
+<script>
+  // Get form element
+  const form = document.getElementById("kontaktFormular");
+
+  // Get contact display element
+  const contactDisplay = document.getElementById("kontaktAnzeige");
+
+  // Add submit event listener
+  form.addEventListener("submit", function(event) {
+    // Prevent default form submission
+    event.preventDefault();
+
+    // Get form values
+    const vorname = form.elements.vorname.value;
+    const nachname = form.elements.nachname.value;
+    const benutzername = form.elements.benutzername.value;
+    // Set password as private attribute (do not save or display)
+    form.elements.passwort.value = "********";
+
+    // Save form values
+    // Note: You would typically save the form values to a database or server here
+
+    // Create new contact element
+    const newContact = document.createElement("p");
+    newContact.innerHTML = `Vorname: ${vorname} Nachname: ${nachname} Benutzername: ${benutzername}`;
+
+    // Append new contact element to contact display
+    contactDisplay.appendChild(newContact);
+  });
+</script>
+
+</body>
+</html>
