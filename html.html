@@ -94,7 +94,39 @@ Zu Beginn der Vorlesung haben wir uns mit den Grundlagen von HTML beschäftigt. 
     </p>
 
     <h2>DOM und Elementveränderung</h2>
+<p>
+    <h3>Document Object Model</h3>
+Das DOM (Document Object Model) ist der "Baum" der Elemente und Attribute in HTML, durch das DOM kann man die (HTML) Inhalte verändern, manipulieren und analysieren.
+    Also: Das DOM stellt jedes Element in einem Dokument als ein Objekt dar, das von einem Programm aufgerufen und manipuliert werden kann. Zum Beispiel kann ein Programm das DOM verwenden, um den Text in einem Paragraphen-Element zu ändern, ein neues Element in eine Liste einzufügen oder den Inhalt eines Formulars abzurufen.
+    Das DOM wird auch von JS Bibliotheken und Frameworks verwendet, um (die Interaktion mit dem User und) die Veränderung des Inhalts /der Struktur von Webseiten zu ermöglichen.
+<br>    Jeder/s Element/Attribut/Text wird als "Knoten" im DOM dargestellt.
+<br>    Mit den folgenden Methoden spricht man Knoten im DOM an:
 
+    <h3>getElementByID()</h3>
+    Ist zwar ein JavaScript Thema, wird aber hier gebraucht:
+    Die getElementById() Methode ist eine Funktion in JavaScript, die verwendet wird, um ein Element mit einer bestimmten ID im DOM (Document Object Model) zu finden und zu manipulieren. Die ID ist ein Attribut, das jedem Element in einem HTML-Dokument zugewiesen wird und dazu verwendet wird, das Element eindeutig zu identifizieren.
+    Um die getElementById() Methode zu verwenden, gibt man einfach den Namen der ID als Argument an und speichert das Ergebnis in einer Variablen.
+    <br> Ein Beispiel dafür sieht zum Beispiel so aus:
+    <br><br>
+    let element = document.getElementById('mein-element');
+    <br><br>
+    Im Beispiel würde die getElementById() Methode das Element mit der ID mein-element im DOM suchen und es in der Variablen element speichern. Man kann dann auf die Eigenschaften und Methoden des Elements zugreifen, um es zu manipulieren oder Infos abzurufen.
+    Ändern kann man das ganze jetzt durch innerHTML
+    <br><br>
+    element.innerHTML = 'Neuer Inhalt';
+    <br><br>
+
+    <h3>getElementsByTagName()</h3>
+Das funktioniert ähnlich wie ID oben, aber diesmal ist es nicht nur ein Element, sondern Elements, also mehrere. Man kann sich z.B. alle Paragraphen(p), h1 Überschriften oder Links einer Seite ausgeben lassen.
+    Das Ergebnis dieser Methode ist kein einzelner Knoten, sondern eine Liste von Knoten.
+    <br>Achtung Beispiel:
+    <br><br>
+    let elements = document.getElementsByTagName('p');
+    <br><br>
+    elements[0].innerHTML = 'Neuer Inhalt';
+    <br><br>
+    Die Methode hier ist besonders nützlich, wenn man alle Elemente eines bestimmten Typs im DOM finden und manipulieren möchte, zum Beispiel alle p-Elemente oder alle image-Elemente.
+    </p>
 
 
 </ul>
