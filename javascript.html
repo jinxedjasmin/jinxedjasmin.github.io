@@ -121,6 +121,28 @@ h1 {letter-spacing: 3px}
         </form><br>
 
     <h3>Arrays, Objekte und JSON</h3>
+    <h4>Array</h4>
+    Ein Array speichert eine Reihe Variablen. In JavaScript sind alle Felder dynamisch. Das bedeutet, dass man sie mit einer bestimmten Größe oder als leeres Array anlegen kann. Wenn der Platz nicht reicht, erweitern sie sich automatisch. In den Arrays können alle möglichen Datentypen gespeichert werden und man kann sie sogar in einem Array mischen. Alle leeren Elemente werden auf undefined gesetzt.
+<br><br>
+    var Array = new Array(6); //neuer Array mit 6 Stellen
+    <br>Array[2]="Wert"; //neuer Wert in Array
+    <br>alert(Array[2]); //Wert auslesen
+<br><br>
+
+    <h4>Objekte</h4>
+    Objekte sind Elemente einer Website wie Bilder mit Namen, Attributen, Methoden(Eigenschaften). Unter <a href="Befehle.html">Befehle</a> findest du auch den most basic Code zu einem Objekt.
+    Genauso wie Arrays beschreiben Objekte kein einzelnes Element, sondern eine Sammlung davon. Hier gibt es aber keinen einfachen Index (wie bei Arrays).
+    <br>oder auch:
+    <br><br>
+    var Objekt = {
+        eineEigenschaft: "Wert";
+        eineMethode: function() {
+    alert(this.meineEigenschaft);}
+    };
+    <br><br>
+    Falls du noch nach Infos suchst, schau hier vorbei: <a href=" https://www-user.tu-chemnitz.de/~heha/hsn/chm/javascript.chm/08-MOA.htm">Mit Objekten arbeiten :)</a>
+
+
 
 
     <br>
@@ -206,13 +228,18 @@ h1 {letter-spacing: 3px}
     <br>Event-Objekt: speichert Informationen über das Event, welches gerade stattgefunden hat, z.B. Position der Maus; Kann nur von dem gerade ausgelösten Objekt genutzt werden
 
 
-    <h3>Window-Modell</h3>
-
-
+    <h3>Window-Objekt</h3>
+    Mit der open()-Methode kann man ein Browserfenster öffnen und Eigenschaften eines Browserfensters anpassen. Die Methode erwartet drei Übergabeargumente:
+    <br><br>
+    var fenster = open('URL', 'nameDesFensters',eigenschaften);
+    <br><br>
+    falls du noch mehr Infos brauchst, hier stehen ganz viele : <a href="https://www.mediaevent.de/javascript/window.html#:~:text=Die%20Eigenschaften%20des%20Window%2DObjekts,und%20alle%20Ressourcen%20geladen%20sind.">Window :)</a>
+<br>
 
 
 
     <h3>Accordion</h3>
+    Mit einem Akkordeon kann man Inhalte in Bereiche teilen und diese einzeln anzeigen lassen. Aber schau selbst:
         <form action="Ubungen/Vorlesung%207%20und%208%20jQuery5s/K10/10.1.html">
             <input type="submit" value="Akkordeon" />
         </form><br>
