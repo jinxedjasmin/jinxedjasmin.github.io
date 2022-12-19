@@ -10,9 +10,7 @@
     width: 50%;
   }
 
-.selektor{
-    max-width: 500px
-}
+
 
   .top_aligned_image {vertical-align: text-top; /* or text-top, I can't remember for sure which works better */}  
 
